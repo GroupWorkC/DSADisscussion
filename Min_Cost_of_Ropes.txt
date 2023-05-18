@@ -1,0 +1,30 @@
+Problem Link --> https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1?page=1&difficulty[]=0&category[]=Queue&sortBy=submissions
+
+Since we need minimum cost so here we can apply Greedy Approach --> taking minimum length ropes first and add them.
+
+1. Brute Force -->  1. Create a variable "cost".
+
+                    2. Run loop until arr.size() > 1.
+                        1. Sort the array in ascending order.
+                        2. Take first two elements and add their combined length to the array and add their cost to    "cost" variable.
+                            Ex --> {2,4,5,7} --> 2+4 -->{6, 5, 7} || cost += 2 + 4 
+                    
+                    3. Return cost.
+
+We need to sort the array again and again until arr.size() != 1. Sorting array takes O(NlogN). Therefore,
+Time Complexity --> (N-1)(NlogN) --> O(N²logN)
+
+
+2. Optimized Approach -->   1. Create a variable "cost".
+
+                            2. Create a min heap (priority queue) "q".
+
+                            3. Run loop until q.size != 1.
+                                1. Take 1st and 2nd elements from q and enqueue their addition result in q and their addition cost to "cost". --> cost += rope1 + rope2
+
+                            4. Return cost.
+                        
+Again we run loop N-1 times and every time we run loop we doing enqueue to q which takes O(logN). Therefore, 
+Time Complexity --> (N-1)(logN) --> O(NlogN). 
+
+                
