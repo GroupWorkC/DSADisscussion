@@ -1,0 +1,11 @@
+String is palindrome or not : https://practice.geeksforgeeks.org/problems/palindrome-string0817/1?page=1&category[]=Strings&sortBy=submissions 
+
+
+Algorithm -> Optimal Solution (My Approach)
+
+	1. We start by declaring two pointers One from last and another from starting i.e (int low,int high)
+	
+	2. Then we iterate over the given string(S) with these pointers and loop over till (low <= high) is true.
+
+	3. When we iterating the string we compare the character at index low and index high. The point at which these 
+	   characters become unequal we return false otherwise true.
