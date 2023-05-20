@@ -1,0 +1,21 @@
+Problem : https://practice.geeksforgeeks.org/problems/mirror-tree/1?page=1&difficulty[]=0&category[]=Tree&sortBy=submissions
+
+
+Approach : We just need to swap the right and left child of every parent node to generate mirror of a tree.
+
+Ex -->           10                     10
+                 / \                    / \  
+                20  30    --->         30  20
+               / \                         / \
+              40 60                       60  40
+
+
+Algorithm -->   1. Create a recursive function 'mirror(root)' which takes root of tree;
+                    a. if node == Null, return;
+                    b. swap node->left and node->right.
+                    c. call recursive function --> mirror(root->left).
+                    d. call recursive function --> mirror(root->right).
+
+                    Since we traverse every node of a tree but at a time call stack can have only that much functions in it at max as much maximum height of the tree, therefore;
+
+                    Time Complexity --> O(Height of the tree).
