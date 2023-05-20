@@ -1,0 +1,42 @@
+Delete Node Without a Head Pointer --: https://practice.geeksforgeeks.org/problems/delete-without-head-pointer/1?page=1&category[]=Linked%20List&sortBy=submissions
+
+Context : The Node which we have to Delete is given.
+
+Algorithm -:
+
+Approach : 
+
+	Step 1: We can have any node so to delete it we have to focus on its value/data which it contains.
+
+	Step 2: Now to change the value we can copy the value of next node to the node which we want to delete,
+		and this we will do to all the node till the second last node.
+
+	Step 3: As we get the second last node and the value from the last node is came to this node. Now we 
+		refrence this secondlast node to null (secondLast.next = null) in the end.
+
+Time Complexity: O(n)
+Space Complexity: O(1)  
+
+
+=========================================================================================================================
+
+
+Code (Java) By Me :
+
+void deleteNode(Node del)
+    {
+        if(del.next==null)
+            del=null;
+            
+         while(true){
+             del.data = del.next.data;
+             if(del.next.next==null)
+                break;
+            
+            del = del.next;
+         }
+         
+         del.next=null;
+    }
+	
+
