@@ -1,0 +1,29 @@
+Problem : https://practice.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1?page=1&difficulty[]=0&category[]=Tree&sortBy=submissions
+
+
+Naive Approach -->  1. T1 and T2 two trees are given with size N and M.
+
+                    2. Find any traversal of both trees.
+
+                    3. If traversal of both trees are same then return true otherwise false.
+
+                    Since we are traversing both trees individually then,
+
+                    Time Complexity --> O(N + M).
+
+
+Optimised Approach --> Traverse both trees simultaneously.
+
+Algorithm -->   1. Create a recursive function 'isIdentical(n1, n2)' which takes nodes of two trees i.e. n1 and n2;
+
+                    a. If any of the node is NULL and other is not, return false.
+
+                    b. If both nodes are NULL, return true.
+
+                    c. If data of both nodes are not equal, return false.
+
+                    d. Return isIdentical(n1->left, n2->left) && isIdentical(n1->right, n2->right);
+
+                    Since we need to traverse both trees simultaneously and if trees are of different sizes, then we traverse only small tree. Therefore,
+
+                    Time Complexity --> O(min(N, M)).
